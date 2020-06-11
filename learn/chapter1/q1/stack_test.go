@@ -1,12 +1,12 @@
-package main
+package q1
 
 import (
-	main2 "leetcode/learn/chapter1/impl"
 	"math/rand"
+	"testing"
 )
 
-func main() {
-	stack := new(main2.Stack)
+func TestStack(t *testing.T) {
+	stack := new(Stack)
 	for i := 0; i < 10; i++ {
 		stack.Push(rand.Intn(10))
 		stack.GetMin()

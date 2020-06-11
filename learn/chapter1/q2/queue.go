@@ -1,9 +1,11 @@
-package impl
+package q2
+
+import "leetcode/learn/chapter1/q1"
 
 // 由两个栈组成的队列
 type Queue struct {
-	stackPush Stack
-	stackPop Stack
+	stackPush q1.Stack
+	stackPop  q1.Stack
 }
 
 func (q *Queue) Add(n int) {
@@ -11,12 +13,12 @@ func (q *Queue) Add(n int) {
 	q.pushToPop()
 }
 
-func (q *Queue) Poll() (int, bool) {
+func (q *Queue) Poll() int {
 	q.pushToPop()
 	return q.stackPop.Pop()
 }
 
-func (q *Queue) Peek() (int, bool) {
+func (q *Queue) Peek() int {
 	q.pushToPop()
 	return q.stackPop.Peek()
 }
@@ -27,7 +29,7 @@ func (q *Queue) Peek() (int, bool) {
 func (q *Queue) pushToPop() {
 	if q.stackPop.Empty() {
 		for !q.stackPush.Empty() {
-			v, _ := q.stackPush.Pop()
+			v := q.stackPush.Pop()
 			q.stackPop.Push(v)
 		}
 	}

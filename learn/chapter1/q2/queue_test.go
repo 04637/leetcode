@@ -1,13 +1,13 @@
-package main
+package q2
 
 import (
 	"fmt"
-	"leetcode/learn/chapter1/impl"
 	"math/rand"
+	"testing"
 )
 
-func main() {
-	queue := new(impl.Queue)
+func TestQueue(t *testing.T) {
+	queue := new(Queue)
 	for i := 0; i < 10; i++ {
 		toAdd := rand.Intn(100)
 		queue.Add(toAdd)
