@@ -2,7 +2,7 @@ package q4
 
 import (
 	"fmt"
-	"leetcode/learn/chapter1/lib"
+	"leetcode/learn/lib"
 )
 
 type PetQueue struct {

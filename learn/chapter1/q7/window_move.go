@@ -1,7 +1,7 @@
 package q7
 
 import (
-	"leetcode/learn/chapter1/lib"
+	"leetcode/learn/lib"
 	"math"
 )
 
