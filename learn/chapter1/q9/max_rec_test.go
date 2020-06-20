@@ -10,8 +10,9 @@ func TestMaxRecSize(t *testing.T) {
 		{1, 1, 1, 1},
 		{1, 1, 1, 0},
 	}
-	maxSize := MaxRecSize2(arr)
-	if maxSize != 6 {
-		t.Errorf("Wrong rec size, expected 6 but got %d", maxSize)
+	maxSize := MaxRecSize(arr)
+	maxSize2 := MaxRecSize2(arr)
+	if maxSize != maxSize2 {
+		t.Errorf("Wrong rec size, expected %d but got %d", maxSize, maxSize2)
 	}
 }

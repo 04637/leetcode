@@ -19,7 +19,7 @@ func MaxRecSize(arr [][]int) (maxArea int) {
 				height[j] += arr[i][j]
 			}
 		}
-		maxArea = MaxRecFromBottom(height)
+		maxArea = tools.MaxInt(MaxRecFromBottom(height), maxArea)
 	}
 	return
 }
@@ -38,7 +38,7 @@ func MaxRecFromBottom(height []int) (maxArea int) {
 			} else {
 				k = stack.Peek().(int)
 			}
-			curArea := (j - k - 1) * height[j]
+			curArea := (i - k - 1) * height[j]
 			maxArea = tools.MaxInt(curArea, maxArea)
 		}
 		stack.Push(i)
