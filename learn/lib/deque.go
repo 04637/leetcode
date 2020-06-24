@@ -1,6 +1,9 @@
 package lib
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 // 双端队列
 type Deque struct {
@@ -68,4 +71,8 @@ func (q *Deque) checkEmpty() {
 
 func (q *Deque) Size() int {
 	return len(q.items)
+}
+
+func (q *Deque) Print(prefix ...string) {
+	fmt.Println(prefix, q.items)
 }
