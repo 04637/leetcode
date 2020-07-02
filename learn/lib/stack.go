@@ -1,6 +1,9 @@
 package lib
 
-import "container/list"
+import (
+	"container/list"
+	"fmt"
+)
 
 type Stack struct {
 	data *list.List
@@ -35,4 +38,18 @@ func (s *Stack) Peek() interface{} {
 
 func (s *Stack) IsEmpty() bool {
 	return s.data.Len() == 0
+}
+
+func (s *Stack) Size() int {
+	return s.data.Len()
+}
+
+func (s Stack) Print() {
+	index := 0
+	fmt.Println("-----------------------------")
+	for e := s.data.Back(); e != nil; e = e.Prev() {
+		fmt.Println(e.Value, "\t: ", index)
+		index++
+	}
+	fmt.Println()
 }
