@@ -9,6 +9,14 @@ func MaxInt(a int, b int) int {
 	}
 }
 
+func MinInt(a int, b int) int {
+	if a > b {
+		return b
+	} else {
+		return a
+	}
+}
+
 // 整数绝对值
 func AbsInt(n int) int {
 	if n > 0 {

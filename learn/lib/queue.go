@@ -1,6 +1,9 @@
 package lib
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 type Queue struct {
 	items []interface{}
@@ -42,4 +45,8 @@ func (q *Queue) checkEmpty() {
 
 func (q *Queue) Size() int {
 	return len(q.items)
+}
+
+func (q *Queue) Print(prefix ...string) {
+	fmt.Println(prefix, q.items)
 }
